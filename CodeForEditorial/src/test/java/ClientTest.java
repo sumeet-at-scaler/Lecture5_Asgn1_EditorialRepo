@@ -76,7 +76,7 @@ class ClientTest {
     public void testAdderOutput() {
         try {
             Class<?> adderClass = Class.forName("Adder");
-            Runnable adderInstance = (Runnable) adderClass.getDeclaredConstructor().newInstance();
+            Object adderInstance = adderClass.getDeclaredConstructor().newInstance();
             java.lang.reflect.Method runMethod = adderClass.getDeclaredMethod("run");
             runMethod.invoke(adderInstance);
             assertEquals("I am the Adder class\n", outContent.toString());
@@ -89,7 +89,7 @@ class ClientTest {
     public void testSubtractorOutput() {
         try {
             Class<?> subtractorClass = Class.forName("Subtractor");
-            Runnable subtractorInstance = (Runnable) subtractorClass.getDeclaredConstructor().newInstance();
+            Object subtractorInstance = subtractorClass.getDeclaredConstructor().newInstance();
             java.lang.reflect.Method runMethod = subtractorClass.getDeclaredMethod("run");
             runMethod.invoke(subtractorInstance);
             assertEquals("I am the Subtractor class\n", outContent.toString());
