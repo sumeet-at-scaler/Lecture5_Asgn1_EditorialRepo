@@ -63,13 +63,13 @@ class ClientTest {
     }
 
     @Test
-    public void testAdderRunnableInterface() {
-        assertTrue(Runnable.class.isAssignableFrom(Adder.class));
+    public void testAdderRunnableInterface() throws Exception{
+        assertTrue(Runnable.class.isAssignableFrom(Class.forName("Adder")));
     }
 
     @Test
-    public void testSubtractorRunnableInterface() {
-        assertTrue(Runnable.class.isAssignableFrom(Subtractor.class));
+    public void testSubtractorRunnableInterface() throws Exception{
+        assertTrue(Runnable.class.isAssignableFrom(Class.forName("Subtractor")));
     }
 
     @Test
